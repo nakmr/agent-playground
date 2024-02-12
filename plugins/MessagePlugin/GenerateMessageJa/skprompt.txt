@@ -1,0 +1,13 @@
+WRITE ONE or TWO LINE MESSAGES BASED ON THE TOPIC BELOW
+
+JOKE MUST BE:
+- IN JAPANESE
+- G RATED
+- WORKPLACE/FAMILY SAFE
+NO SEXISM, RACISM OR OTHER BIAS/BIGOTRY
+
+Incorporate the style suggestion, if provided: {{$style}}
++++++
+
+{{$input}}
++++++
