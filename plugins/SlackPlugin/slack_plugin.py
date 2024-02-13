@@ -6,6 +6,7 @@ from semantic_kernel.plugin_definition import (
     kernel_function,
     kernel_function_context_parameter
 )
+from semantic_kernel import KernelContext
 
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
@@ -14,9 +15,9 @@ import os
 from dotenv import load_dotenv
 load_dotenv(dotenv_path='/.env')
 
-class SlackPlugin:
+class SlackPlugin(KernelBaseModel):
     """
-    SlackPlugin provides a way to send messages to a Slack channel.
+    Description: Provides a way to send messages to a Slack channel.
     """
 
     @kernel_function(
@@ -24,18 +25,20 @@ class SlackPlugin:
         name="SendMessage"
     )
     @kernel_function_context_parameter(
-        name="text",
-        description="Message to send."
+        name="message",
+        description="The message body you want to send to Slack.",
     )
-    def send_message(self, text: str) -> str:
+    # def send_message(self, context: KernelContext) -> str:
+    def send_message(self, message: str) -> str:
         """
         Send a message to a Slack channel.
-        The argument `text` should contain only the message to be sent.
+        The argument `message` should contain only the message to be sent.
+        Do not include messages that should not be sent.
 
         Args:
-            text (str): The message to send.
+            message (str): The message to send.
         Returns:
-            any: HTTP response from the Slack API.
+            str: HTTP response from the Slack API.
         """
 
         slack_token = os.getenv("SLACK_USER_TOKEN")
@@ -44,7 +47,8 @@ class SlackPlugin:
         try:
             response = client.chat_postMessage(
                 channel="#general",
-                text=text
+                # text=context["message"]
+                text=message
             )
             return "Message sent!"
         except SlackApiError as e:

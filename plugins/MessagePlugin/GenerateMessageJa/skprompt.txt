@@ -9,5 +9,5 @@ NO SEXISM, RACISM OR OTHER BIAS/BIGOTRY
 Incorporate the style suggestion, if provided: {{$style}}
 +++++
 
-{{$input}}
+{{$subject}}
 +++++

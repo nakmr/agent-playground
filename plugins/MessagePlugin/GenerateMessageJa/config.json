@@ -12,13 +12,13 @@
     },
     "input_variables": [
         {
-        "name": "input",
+        "name": "subject",
         "description": "Message subject",
         "default": ""
         },
         {
         "name": "style",
-        "description": "Give a hint about the desired message style",
+        "description": "[Optional] Give a hint about the desired message style",
         "default": ""
         }
     ]
