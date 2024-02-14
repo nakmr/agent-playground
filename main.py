@@ -74,7 +74,7 @@ def conversation_with_experts(lm, input, skills, previous_input="", previous_out
             - 出力形式は以下のようなJSONフォーマットであること
                 ```
                 {{
-                    "user": "ユーザの入力",
+                    "user": "すべてのユーザ入力を統合した文章",
                     "best_plan": [実行する関数名のリスト],
                     "input_description": "実行する関数名とその関数を利用する目的の説明"
                 }}
@@ -108,8 +108,7 @@ def conversation_with_experts(lm, input, skills, previous_input="", previous_out
             lm += f"""\
                 新しいユーザの入力:{input}
                 前回のユーザの入力:{previous_input}
-                前回の実行計画:{previous_output}
-                前回のユーザの入力および前回の実行計画と、新しいユーザの入力に基づいて、新しい実行計画を作成してください。
+                前回のユーザの入力および新しいユーザの入力に基づいて、新しい実行計画を作成してください。
                 また、必ずJSON形式の部分のみを出力してください。
             """
 

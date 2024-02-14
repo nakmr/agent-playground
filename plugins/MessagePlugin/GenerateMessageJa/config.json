@@ -1,6 +1,6 @@
 {
     "schema": 1,
-    "description": "Generate a message in Japanese. This function should be used to format the message before sending it.",
+    "description": "Generate a message in Japanese.",
     "execution_settings": {
         "default": {
         "max_tokens": 1000,
@@ -13,7 +13,7 @@
     "input_variables": [
         {
         "name": "subject",
-        "description": "Message subject",
+        "description": "Message subject which will be used to generate the message",
         "default": ""
         },
         {
