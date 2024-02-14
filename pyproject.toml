@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "agent-playground"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+semantic-kernel = "0.5.1.dev0"
+guidance = "^0.1.10"
+azure-identity = "^1.15.0"
+google-api-python-client = "^2.117.0"
+slack-sdk = "^3.27.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

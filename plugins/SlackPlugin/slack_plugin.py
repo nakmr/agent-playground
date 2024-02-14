@@ -1,6 +1,3 @@
-import logging
-logging.basicConfig(level=logging.DEBUG)
-
 from semantic_kernel.kernel_pydantic import KernelBaseModel
 from semantic_kernel.plugin_definition import (
     kernel_function,
